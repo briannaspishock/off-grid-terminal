@@ -64,3 +64,16 @@ refresh
 # verify Markor and Termux are indexed
 apps -ls
 ```
+## 6. Download/Install of Kiwix and VLC
+ensuring deck is functional without an active network
+
+```bash
+# VLC (Media Playback)
+curl -L -o VLC.apk https://get.videolan.org/vlc-android/3.5.4/VLC-Android-3.5.4-arm64-v8a.apk
+
+adb install VLC.apk
+
+# Kiwix (app only from github download)
+adb install ~/Downloads/3.14.0-arm64-v8a-standalone.apk
+
+```
