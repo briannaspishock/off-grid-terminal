@@ -28,31 +28,3 @@ can a piece of redundant mobile hardware be lobotomized and re-engineered into a
 * Markor for a distraction-free Markdown word processor
 * Kiwix for hosting a local, offline copy of Wiktionary and specialized medical wikis for instant, off-grid reference
 * VLC for a local media archive for research-related video and audio
-
----
-## installation:
-```bash
-# core terminal environment
-wget https://github.com/termux/termux-app/releases/download/v0.118.0/termux-app_v0.118.0+github-debug_arm64-v8a.apk -O Termux.apk
-
-# distraction-free markdown engine
-wget https://github.com/gsantner/markor/releases/download/v2.16.0/net.gsantner.markor-v162-2.16.0-flavorDefault-release.apk -O Markor.apk
-
-# TUI shell (text user interface)
-wget https://f-droid.org/repo/com.vitocode.tuilauncher_10.apk -O TUI.apk
-
-# verify node is online
-adb devices
-
-# inject software
-adb install Termux.apk
-adb install Markor.apk
-adb install TUI.apk
-adb install VLC.apk
-
-# force permanent landscape orientation (desktop mode)
-adb shell settings put system user_rotation 1
-
-# finalizing aesthetic in phone via TUI prompt
-# theme -color #00FFFF   (sets a cyan lab glow)
-# fullscreen -on         (removes the phone status bar)
