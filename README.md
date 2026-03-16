@@ -32,6 +32,15 @@ can a piece of redundant mobile hardware be lobotomized and re-engineered into a
 ---
 ## installation:
 ```bash
+# core terminal environment
+wget https://github.com/termux/termux-app/releases/download/v0.118.0/termux-app_v0.118.0+github-debug_arm64-v8a.apk -O Termux.apk
+
+# distraction-free markdown engine
+wget https://github.com/gsantner/markor/releases/download/v2.16.0/net.gsantner.markor-v162-2.16.0-flavorDefault-release.apk -O Markor.apk
+
+# TUI shell (text user interface)
+wget https://f-droid.org/repo/com.vitocode.tuilauncher_10.apk -O TUI.apk
+
 # verify node is online
 adb devices
 
