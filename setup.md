@@ -24,8 +24,43 @@ echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", MODE="0666", GROUP="plugdev"' | 
 cat /etc/udev/rules.d/51-android.rules
 
 #reset ADB daemon
-adb killer-server
+adb kill-server
 adb start-server
 adb devices
 
+```
+## 4. Download and Install 
+direct download: after Samsung device is connected and recognized, curl with -L flag was used to follow github redirects 
+
+```bash
+
+# Termux
+curl -L -o termux.apk https://github.com/termux/termux-app/releases/download/v0.118.1/termux-app_v0.118.1+github-debug_universal.apk
+
+adb install termux.apk
+```
+
+T-UI and Markor downloaded via browser to local ~/Downloads folder 
+
+```bash
+# Markor and T-UI .apk downloaded from github
+
+# install Markor
+adb install ~/Downloads/net.gsantner.markor-v162-2.16.0-flavorDefault-release.apk
+
+# install T-UI (console launcher)
+adb install ~/Downloads/ohi.andre.consolelauncher_fdroid_205_11.17.apk
+```
+
+## 5. Finalizing UI
+* on device, Settings>Apps>Choose default apps
+* select T-UI as default home
+* refresh and ensure Markor and Termux are indexed
+
+```bash
+# refresh app index
+refresh
+
+# verify Markor and Termux are indexed
+apps -ls
 ```
