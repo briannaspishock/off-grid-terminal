@@ -1,0 +1,58 @@
+#from pc terminal
+
+#check for Samsung packages
+adb shell pm list packages | grep 'samsung'
+
+#delete unnecessary samsung bloat
+for package in \
+com.samsung.android.aremoji \
+com.samsung.android.kidsinstaller \
+com.samsung.android.app.spage \
+com.samsung.android.game.gamehome \
+com.samsung.android.game.gos \
+com.samsung.android.forest \
+com.samsung.android.scloud \
+com.sec.android.app.samsungapps \
+com.samsung.android.themestore
+do
+  adb shell pm uninstall -k --user 0 $package
+done
+
+#remove downloads
+adb shell rm -rf /sdcard/Download/*
+
+#check for large directory files
+adb shell du -sh /sdcard/* | sort -hr
+
+#remove pre-compiled app caches
+adb shell cmd package bg-dexopt-job
+
+
+#remove phone status bar
+
+adb shell settings put global policy_control immersive.full=*
+
+#from device
+
+#force landscape orientation
+config -set orientation 0
+
+#override double click for search on Samsung device
+config -set double_tap_interval 0
+
+#remove clutter from UI
+config -set show_network_info false
+config -set show_unlock_counter false
+
+#set UI colors
+config -set bg_color #1a1d23
+config -set input_color #e0e0e0
+config -set output_color #d4f1f9
+config -set cursor_color #d4f1f9
+
+# set UI accents
+config -set time_color #a2b5cd
+config -set ram_color #a2b5cd
+config -set storage_color #a2b5cd
+config -set battery_color_high #d4f1f9
+
