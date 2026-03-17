@@ -43,10 +43,12 @@ adb install termux.apk
 T-UI and Markor downloaded via browser to local ~/Downloads folder 
 
 ```bash
-# Markor and T-UI .apk downloaded from github
+# T-UI .apk downloaded from github, wget for Obsidian 
 
-# install Markor
-adb install ~/Downloads/net.gsantner.markor-v162-2.16.0-flavorDefault-release.apk
+wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.12.4/Obsidian-1.12.4.apk
+
+# install Obsidian
+adb install Obsidian-1.12.4.apk
 
 # install T-UI (console launcher)
 adb install ~/Downloads/ohi.andre.consolelauncher_fdroid_205_11.17.apk
@@ -61,7 +63,7 @@ adb install ~/Downloads/ohi.andre.consolelauncher_fdroid_205_11.17.apk
 # refresh app index
 refresh
 
-# verify Markor and Termux are indexed
+# verify Obsidian and Termux are indexed
 apps -ls
 ```
 ## 6. Download/Install of Kiwix and VLC
