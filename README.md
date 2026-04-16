@@ -4,7 +4,7 @@
 ![status](https://img.shields.io/badge/status-off--grid-green)
 
 ## mini-writerdeck
-minimalist, off-grid Writerdeck prototype
+minimalist, mini Writerdeck prototype
 
 this project is an experiment in distraction-free writing via repurposing a deactivated Samsung node into a dedicated single-use terminal for deep writing.
 
