@@ -40,7 +40,7 @@ curl -L -o termux.apk https://github.com/termux/termux-app/releases/download/v0.
 adb install termux.apk
 ```
 
-T-UI and Markor downloaded via browser to local ~/Downloads folder 
+T-UI and Obsidian downloaded via browser to local ~/Downloads folder 
 
 ```bash
 # T-UI .apk downloaded from github, wget for Obsidian 
